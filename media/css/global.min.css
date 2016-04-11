@@ -1,0 +1,239 @@
+body,.ui-page,.ui-content{background:#efefef;background-image:-webkit-gradient(linear,left top,left bottom,from( #fefefe ),to( #efefef ));background-image:-webkit-linear-gradient(top,#fefefe,#efefef );background-image:-moz-linear-gradient(top,#fefefe,#efefef );background-image:-ms-linear-gradient(top,#fefefe,#efefef );background-image:-o-linear-gradient(top,#fefefe,#efefef );background-image:linear-gradient(top,#fefefe,#efefef )}
+html,body,.ui-content,.page-single{height:100%}
+.ui-mobile .type-home .ui-content{margin:0;background:#ededed}
+.ui-mobile #jqm-homeheader{padding:0 10px 0;text-align:center;margin:0 auto}
+.ui-mobile #jqm-homeheader h1{margin:0}
+.ui-mobile #jqm-homeheader p.intro{margin:.3em 0 0;line-height:1.3;font-size:1.2em;font-weight:bold;color:#666666}
+a{text-decoration:none}
+p{line-height:150%}
+#exchange-details .ui-content{padding:0 15px}
+h2{margin:1.2em 0 .4em 0}
+dt{font-weight:bold;margin:2em 0 .5em}
+#jqm-homeheader img{}
+img{max-width:100%}
+.ui-header .jqm-home{top:0.65em}
+nav{margin:0}
+p.intro{font-size:.9em;line-height:1.5;border-bottom:0;background:none;margin:.3em 0 .9em;padding:0 .1em 0 1.7em}
+p.reg-intro{text-align:center;margin:0 auto;max-width:650px;padding:0 20px 20px}
+p.intro strong{color:#c91f00}
+.footer-docs{padding:5px 0;border-top:1px solid #ccc}
+.footer-docs li{float:right;padding:0 15px 10px 0;font-weight:normal;font-size:.9em;list-style:none}
+.tag{padding:7px 0;text-transform:uppercase;margin:.3em 0 0;line-height:1.5;font-size:.77em;letter-spacing:.1em;font-weight:bold;color:#666666;border-top:1px solid #ddd;border-bottom:1px solid #ddd}
+.tag strong{color:#C30000}
+.type-interior .content-secondary{border-right:0;border-left:0;margin:10px -15px 0;background:#ededed;border-top:1px solid #ccc}
+.type-home .ui-content{margin-top:5px}
+.type-interior .ui-content{padding-bottom:0}
+.content-secondary .ui-collapsible{padding:0 15px 10px}
+.content-secondary .ui-collapsible-content{padding:0;background:none;border-bottom:none}
+.content-secondary .ui-listview{margin:0}
+dt{margin:35px 0 15px 0;background-color:#ddd;font-weight:normal}
+dd{margin-bottom:10px}
+dd .default{font-weight:bold}
+dd pre{margin:0 0 0 0}
+dd h4{margin:15px 0 0 0}
+.localnav{margin:0 0 20px 0;overflow:hidden}
+.localnav li{float:left}
+.localnav .ui-btn-inner{padding:.6em 10px;font-size:80%}
+.site-logo{position:relative}
+.beta-marker{text-transform:uppercase;font-size:30%;position:absolute;bottom:63px;right:121px;background:#bbb;padding:3px 6px;border:1px solid #eee;color:#fff;letter-spacing:.1em;font-family:georgia,arial,sans-serif}
+#auth .beta-marker,#register .beta-marker,#tour .beta-marker{}
+#tour h4{line-height:150%}
+/*.ui-bar-f{border:1px solid #56A00E;background:#74b042;color:#fff;font-weight:bold;text-shadow:0 -1px 1px #234403;background-image:-webkit-gradient(linear,left top,left bottom,from(#74b042),to(#56A00E));background-image:-webkit-linear-gradient(top,#74b042,#56A00E);background-image:-moz-linear-gradient(top,#74b042,#56A00E);background-image:-ms-linear-gradient(top,#74b042,#56A00E);background-image:-o-linear-gradient(top,#74b042,#56A00E);background-image:linear-gradient(top,#74b042,#56A00E)}
+.ui-bar-f,.ui-bar-f .ui-link-inherit{color:#fff}
+.ui-bar-f .ui-link{color:#fff;font-weight:bold}
+*/.btn-signin{float:right}
+.btn-start-exchange{padding-top:24px}
+.btn-tour{padding-top:12px;padding-bottom:12px}
+.home-user-pv{float:left;margin:2px 8px 2px 0}
+.home-ge-row{overflow:hidden;clear:both}
+.home-user-dtl{text-align:right}
+.home-user-addtl{clear:both}
+#fb-login-prompt{margin:20px auto;padding:20px 10px;text-align:center}
+#email-login-prompt{max-width:460px;margin:34px auto;padding:15px 10px}
+#login-addtl{margin:34px auto;padding:20px 7px;text-align:center;line-height:150%}
+#email-login-btn{padding:9px 24px}
+.fb-registration-container{text-align:center;padding:5px 0 12px;margin-bottom:32px}
+.page-single{text-align:center}
+.auth-block{margin:34px auto;padding:15px 10px}
+/*.page-title{padding:0;margin:0}
+*/.module{padding:7px;margin:10px auto 0;text-align:center;clear:both}
+.ul-li-exchange-img{width:100px;float:left}
+.ul-li-exchange-img img.img-border{margin:5px 5px 5px 0}
+.ui-mobile img.img-border{border:1px solid #ccc;margin:5px;padding:3px}
+.ul-li-desc{padding-right:12px}
+.footnote{color:#777;font-size:80%}
+.ul-li-line{line-height:140%}
+.ul-li-exchange-main{overflow:hidden}
+.addtl-tab{float:right}
+.addtl-tab-txt{padding:0 15px}
+.exchange-member-teaser{margin-top:19px}
+.exchange-member-box{float:left;padding:5px}
+.exchange-dtl-col-1{overflow:hidden;padding:3px 0 3px 4px;margin:3px 15px 0 2px;height:100%;font-size:90%}
+.exchange-dtl-col-2{font-size:90%;line-height:130%}
+.exchange-dtl-img{width:200px;float:left;text-align:center;overflow:visible;margin:0 24px 0 0;/* overflow:hidden;margin:0 15px 0 0;*/}
+.exchange-dtl-rows{margin:0 7px;padding:8px;line-height:140%}
+.exchange-dtl-rows .ui-block-b .ui-bar{margin:0;padding:0}
+.exchange-dtl-desc{padding:12px 2em 17px;clear:both;line-height:150%}
+.exchange-dtl-match-pic{margin:2px 0 7px}
+.exchange-dtl-result{text-align:center;overflow:hidden}
+.exchange-dtl-match-block{border-radius:7px;border:0;padding:8px 5px;margin:8px 2px 2px;text-align:center}
+.exchange-dtl-match-block-pnd{background:#fff;border:2px dashed #ccc}
+.exchange-dtl-match-name-only{padding:16px 0}
+.exchange-dtl-match-con{margin:5px auto 20px}
+.exchange-dtl-result-pic{float:left;width:110px}
+.exchange-dtl-result-nm{float:left;padding-top:16px}
+.exchange-dtl-result-nm-only{}
+.exchange-dtl-navbar{margin-top:25px}
+.exchange-dtl-address{margin-bottom:6px;display:block}
+.exchange-dtl-price{padding-top:8px}
+.exchange-matches-pic{float:left;padding-right:8px}
+.exchange-matches-pic img{margin-right:8x}
+.exchange-matches-1{float:left;padding-top:7px}
+.exchange-matches-2{float:left;padding-top:21px;padding-right:8px}
+.exchange-matches-3{float:left;padding-top:7px}
+.exchange-matches-wrapper{clear:both;overflow:hidden}
+.exchange-matches-wrapper .ui-bar{padding-left:0;padding-right:7px}
+.exchange-form-submit{padding-top:15px}
+.email-invite-form-submit{padding-top:24px}
+#frm-email-container{margin-left:0;padding-left:0}
+#frm-email-container li{list-style-type:none;padding-left:0;margin-left:0}
+.frm-email-row{padding-bottom:14px}
+#spending_limit_txt{width:35%}
+.noresults p{text-align:center;padding:10px 5px 20px;margin:10px;font-size:105%;white-space:normal;line-height:150%}
+.field-err{border:1px solid red;background:#fbc5bb}
+#exchange_pic_option_default,#exchange_pic_option_upload_preview,#user_pic_option_fb,#user_pic_option_upload_preview,#user_pic_option_default{text-align:center;padding-top:10px}
+#user_fb_img{}
+#user_pic_option_fb{padding:10px}
+#exchange_pic_option_upload_preview img,#user_pic_option_upload_preview img{border:2px dashed #bbb;padding:10px;min-width:125px;min-height:125px}
+#user_pic_option_upload_preview img{min-width:100px;min-height:100px}
+.loading{background:url(/assets/i/loading2.gif);background-repeat:no-repeat;background-position:center}
+.exchange-form-block{padding:15px 10px 15px;border-bottom:2px solid #ddd}
+.alert-bar{margin-top:15px}
+.alert-bar h3{float:left;margin-top:8px}
+.alert-bar .dismiss-btn{float:right;margin-top:4px}
+.alert-bar p{clear:both;font-size:85%;line-height:150%;margin:6px 0 2px}
+#friend-invitations{min-width:250px;min-height:250px}
+.ui-field-contain .ui-controlgroup-controls{width:auto}
+#exchange-details .page-inner{background:url(/assets/i/js_background2.png) repeat-x top left}
+#user_profile{text-align:center}
+#user_profile .profile-content{padding:15px 5px}
+.exchange-social-container{padding:0 5px 20px 0}
+.exchange-social-block{float:left}
+.alert-box-message{padding:15px;line-height:150%;margin:15px 15px 0}
+.draw-previous{text-align:center;padding:35px 5px}
+.draw-previous-header{padding:6px 0;border:2px solid #fff;margin:-5px}
+.draw-previous-cell{padding:8px 0}
+.practice-result-cell{padding:8px 0}
+.allow-repeats-prompt{padding:20px;margin:10px;background:#fff;line-height:150%}
+.exc-row{padding:10px 10px 20px;margin:5px;border-bottom:2px solid #ccc;overflow:hidden}
+.exc-top-divider{margin-top:20px}
+.exc-cbs{float:left;display:none}
+.exc-cbs .ui-checkbox{float:left;margin:5px 20px 5px 0;width:240px}
+.practice-prompt{padding:3px 15px 12px;border:1px solid #333;margin:5px 15px;background:#fff}
+.practice-check{width:230px;margin:10px auto}
+#practice-results-container{margin:7px;padding:7px;min-width:450px;max-width:450px}
+.div-footnote{border:1px solid #ddd;background:#fff;padding:8px 15px;margin:28px 12px;font-size:80%}
+#step1 .div-footnote{margin:28px 0}
+.name-large{font-size:110%}
+.forgot-pswd-prompt{padding:10px 0 10px 120px;font-size:80%}
+.error_prompt{list-style-type:none;padding:4px 8px;margin:10px;background:#fff;border:1px solid #ccc}
+.error_prompt li{padding:6px 5px;font-weight:bold;line-height:150%}
+.home-list{padding-top:.4em;padding-left:4em;color:#58585A}
+.home-list li{border:0;width:80%;margin-top:3px;font-family:helvetica,arial,sans-serif;font-size:98%;line-height:150%}
+#home .jqm-home{display:none}
+.ui-link{font-size:98%}
+.auth-btn{max-width:300px;margin:0 auto}
+.drawing-results-prompt{padding:15px 10px 0;white-space:normal;line-height:150%}
+#home h3{padding-top:0;margin-top:0}
+.tour-img{padding-bottom:40px}
+#exchange-invite .alert-bar{margin-top:0}
+.login-options-group{margin:0 auto;width:395px;overflow:hidden}
+.frm-email-plus{float:left}
+.frm-email-plustxt{padding:13px 10px 0}
+.ui-simpledialog-header{padding:9px;margin:2px 4px}
+@media all and (max-device-width:480px){.home-ge-cnt{display:none}
+img{max-width:90%;height:auto}
+.page-title{}
+.jqm-home{display:none}
+.exchange-member-teaser{clear:both}
+.ul-li-exchange-img{display:none}
+/* .ul-li-exchange-img img{max-width:50px;height:auto}
+*/ .ul-li-exchange-main{overflow:visible}
+.exchange-dtl-img img{/* max-width:50px;height:auto;*/}
+.exchange-dtl-img{/* width:60px;*/ margin:0 auto 7px;clear:both;float:none;text-align:center}
+.exchange-dtl-rows{margin:0;padding:3px}
+.exchange-dtl-match-block{padding:8px 2px}
+.exchange-dtl-desc{padding:.3em .5em}
+.exchange-dtl-result{text-align:center;margin:0 auto}
+.exchange-dtl-result-pic{clear:both;text-align:center;margin:0 auto;float:none;padding:0}
+.exchange-dtl-result-nm{padding-top:6px;float:none;display:block;text-align:center;padding:0}
+.exchange-matches-pic{display:none}
+.exchange-matches-3{float:none;clear:both}
+.home-list{padding-top:.3em;padding-left:3em}
+.home-list li{width:87%}
+.login-options-group{width:90%}
+#email-login-prompt{margin-top:0;padding-top:5px}
+.beta-marker{display:none}
+p.intro{padding:15px;margin:.3em 0 .9em}
+.practice-check{width:auto}
+}
+@media all and (min-width:650px){.jqm-home{position:absolute;left:10px;top:0}
+.type-home .ui-content{margin-top:5px}
+.ui-mobile #jqm-homeheader{max-width:340px}
+.ui-mobile .jqm-themeswitcher{float:right}
+.type-home .ui-content,.type-interior .ui-content{padding:0}
+.type-interior .ui-content{background-position:45%;overflow:hidden}
+.content-secondary{text-align:left;float:left;width:45%;background:none}
+.content-secondary,.type-interior .content-secondary{margin:30px 0 20px 2%;padding:20px 4% 0 0;background:none;border-top:none}
+.type-index .content-secondary{padding:0}
+.content-secondary .ui-collapsible{margin:0;padding:0}
+.content-secondary .ui-collapsible-content{border:none}
+.type-index .content-secondary .ui-listview{margin:0}
+/* .ui-mobile #jqm-homeheader{padding:0}
+*/ .content-primary{width:45%;float:right;margin-top:30px;margin-right:1%;padding-right:1%}
+.page-inner .content-primary{float:left;margin-top:10px}
+.content-primary ul:first-child{margin-top:0}
+.content-secondary h2{position:absolute;left:-9999px}
+.type-interior .content-primary{padding:1.5em 6% 3em 0;margin:0}
+.content-secondary .ui-collapsible-heading{display:none}
+.content-secondary .ui-collapsible-contain{margin:0}
+.content-secondary .ui-collapsible-content{display:block;margin:0;padding:0}
+.type-interior .content-secondary .ui-li-divider{padding-top:1em;padding-bottom:1em}
+.type-interior .content-secondary{margin:0;padding:0}
+}
+@media all and (min-width:750px){.type-home .ui-content,.type-interior .ui-content{background-position:39%}
+.content-secondary{width:30%}
+.content-primary{width:60%;padding-right:1%}
+.type-interior .ui-content{background-position:34%}
+.ui-mobile #jqm-homeheader{padding:0 10px 40px}
+.exchange-matches-wrapper .ui-bar{}
+}
+@media all and (min-width:1200px){.type-home .ui-content{background-position:38.5%}
+.type-interior .ui-content{background-position:30%}
+.content-secondary{width:30%;padding-right:3%;margin:30px 0 20px 4%}
+.type-interior .content-secondary{margin:0;padding:0}
+.content-primary{width:55%;margin-right:2%;padding-right:2%}
+.type-interior .content-primary{width:60%}
+.ui-mobile #jqm-homeheader{padding:0 10px 40px}
+}
+@media all and (min-device-width:768px) and (max-device-width:1024px){.ui-mobile #jqm-homeheader{padding:20px 0}
+p.intro{padding-left:6px;padding-right:4px}
+#step1 .content-primary,#step2 .content-primary,#step3 .content-primary,#edit_account .content-primary{width:100%}
+#step1 .content-secondary,#step2 .content-secondary,#step3 .content-secondary{display:none}
+#home .ui-content,#past .ui-content,#exchange-details .ui-content{padding-right:0}
+#home .content-primary,#past .content-primary,#exchange-details .content-primary{margin-right:3%}
+#home .content-secondary,#past .content-secondary,#exchange-details .content-secondary{padding-right:0;margin-left:0;padding-left:0;width:38%}
+#start .content-primary{margin-right:1%}
+#start .content-secondary{width:36%}
+#exchange-details .exchange-dtl-img{margin-right:10px;padding-right:15px;width:75px}
+#exchange-details .alert-bar{margin-right:20px}
+#edit_exchange .content-primary{width:100%}
+.exchange-dtl-result{text-align:center;margin:0 auto}
+.exchange-dtl-result-pic{clear:both;text-align:center;margin:0 auto;float:none;padding:0}
+.exchange-dtl-result-nm{float:none;display:block;text-align:center;padding:0}
+.beta-marker{display:none}
+.home-list{padding-left:2em;padding-right:0;margin-right:0}
+.content-primary{width:55%;margin-right:1%;padding-right:1%}
+#exchange-invite .content-primary{width:65%}
+#exchange-invite .content-secondary{width:25%}
+}

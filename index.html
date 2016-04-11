@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<head>
+	<title>TodoApp</title>
+<!--	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	For HTML4.01-->
+	<meta charset="utf-8" /> <!-- 	For HTML5-->
+	<meta name="description" content="TodoApp - WebApp for items to do linked to à TodoApp">
+	<meta name="author" content="Alain Beauseigle">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="media/images/favicon.ico" />
+	<link rel="stylesheet" media="screen" type="text/css" href="http://www.mywebsite.com/todoapp/websqlapp.css" /> 
+<!--	<link rel="stylesheet" media="screen" type="text/css" href="websqlapp.css" /> -->
+	<link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-precomposed.png" />
+	<script src="lib/webSqlSync.js"></script>
+	<script src="mySyncData.js"></script>
+	<script src="todoapp.js"></script>
+</head>
+<body>
+
+<!-- LIST -->
+<div id="List">
+	<div id="divContainer">
+	
+		<div class="containerDiv">
+		  <div class="rowDivHeader">
+			<div class="cellDivHeaderLeft">Todo<sup>App</sup><img src="images/TodoAppIcon20.png" alt="Icone Todo App"/></div>
+			<div class="cellDivHeaderRight">Affaires<sup>UP</sup></div>
+		  </div>
+		</div>
+	
+		<div class="rowDivButton">
+			<div class="cellDivButtonLeft">
+				<button type="button" onclick="return showHide('Add','List');" ><img src="images/plus-white.png" alt="Add"/>Add</button>
+			</div>
+			<div class="cellDivButtonCenter">
+				<button type="button" onclick="return showHide('Filter','List');" ><img src="images/funnel-white.png" alt="Filter"/>Filter</button>
+			</div>
+			<div class="cellDivButtonRight">
+				<button type="button" name="syncButton" id="syncButton" onclick="this.disabled=true; NEXTsyncWithServer();" ><img id="syncImage" src="images/recycle-white.png" alt="Sync"/>Sync</button>
+			</div>
+			<div class="cellDivButtonRight">
+				<button type="button" onclick="return showHide('LoginParamEdit','List');" ><img src="images/gear-white.png" alt="Param"/>Auth</button>
+			</div>
+		</div>
+		<div>
+			<div id="datatables" class="display">
+				<div id="listItem"> </div>	
+			</div>
+		</div>
+
+        <div id="fileName"></div>
+        <div id="fileSize"></div>
+        <div id="fileType"></div>
+        <div class="uiProgress"> Upload progress: </div>
+        <div id="uploadProgress"> </div>
+        <div class="uiProgress"> Download progress: </div>
+        <div id="downloadProgress"> </div>
+        <progress id="downloadProgressNumber" value="0" max="100" form="form-progress">xx%</progress>
+		<span id="currProgress"> </span>
+
+	</div>	<!-- Div Header -->
+</div>	<!-- Div List -->
+
+<!-- ADD -->
+<div id="Add" style="display:none">
+	<div id="divContainer">
+
+		<div class="containerDiv">
+			<div class="rowDivHeader">
+				<div class="cellDivHeaderLeft">
+					<button type="button" class="menuButton" onclick="return showHide('List','Add');" ><img src="images/home-white.png" alt=""/>Home</button>
+					<!-- onclick="return showHide('Add','List');" -->
+				</div>
+				<div class="cellDivHeaderRight">Todo<sup>App</sup></div>
+			</div>
+		</div>
+
+		<div class="default-gray" style="background-color:#FFFFFF;font-size:12px;font-family:'Open Sans','Helvetica Neue','Helvetica',Arial,Verdana,sans-serif;color:#4D4D4D;"><!-- Div Form -->
+			<div class="element-date" >
+				<label class="title">Date Inserted<span class="required">*</span></label>
+				<input class="datewidth" placeholder="yyyy-mm-dd" type="date" name="DateInsertedAdd"  id="DateInsertedAdd" value="" min="2010-01-01" required />
+			</div>
+			<div class="element-date" >
+				<label class="title">Date Due</label>
+				<input class="datewidth" placeholder="yyyy-mm-dd" type="date" name="DateDueAdd"  id="DateDueAdd" value="" min="2010-01-01" />
+			</div>
+
+			<div class="element-select" >
+				<label class="title">Resource (Responsible<span class="required">*</span>  + Helper)</label>
+				<div class="large">
+					<select name="Resp1SelectAdd" id="Resp1SelectAdd" value="" required="required" >
+					</select>
+				</div>
+				<div class="large">
+					<select name="Resp2SelectAdd" id="Resp2SelectAdd" value="" >
+					</select>
+				</div>
+			</div>
+
+			<div class="element-select" >
+				<label class="title">Category<span class="required">*</span></label>
+				<div class="large">
+				<select name="CategorySelectAdd" id="CategorySelectAdd" value="" required="required">
+				</select>
+				</div>
+			</div>
+			<div class="element-textarea" >
+				<label class="title">Description<span class="required">*</span></label>
+				<textarea class="large3lineText" name="DescAdd" id="DescAdd" cols="10" rows="4" ></textarea>
+			</div>
+		
+			<div class="element-select" >
+				<label class="title">Priority<span class="required">*</span></label>
+				<div class="large">
+				<select name="PrioSelectAdd" id="PrioSelectAdd" value="9" >
+					<option value="9">9 - To priorise</option>
+					<option value="1">1 - Low</option>
+					<option value="2">2 - Middle</option>
+					<option value="3">3 - High</option>
+				</select>
+				</div>
+			</div>
+		
+			<div class="rowDivButton">
+				<div class="cellDivButtonLeft">
+					<button type="button" name="AddButton" onclick="insertTodo();" ><img src="images/plus-white.png" alt=""/>Add</button>
+					<!-- onclick="return showHide('Add','List');" -->
+				</div>
+				<div class="cellDivButtonRight">
+					<button type="button" onclick="resetForm();" ><img src="images/back-white.png" alt=""/>Reset Form</button>
+				</div>
+			</div>
+		</div>	<!-- div Form -->
+	</div>	<!-- div Header -->
+</div>	<!-- div Add -->
+
+<!-- EDIT -->
+<div id="Edit" style="display:none">
+	<div id="divContainer">
+
+		<div class="containerDiv">
+			<div class="rowDivHeader">
+				<div class="cellDivHeaderLeft">
+					<button type="button" class="menuButton" onclick="return showHide('List','Edit');"><img src="images/home-white.png" alt=""/>Home</button>
+				</div>
+				<div class="cellDivHeaderRight">Todo<sup>App</sup></div>
+			</div>
+		</div>
+
+		<div class="default-gray" style="background-color:#FFFFFF;font-size:12px;font-family:'Open Sans','Helvetica Neue','Helvetica',Arial,Verdana,sans-serif;color:#4D4D4D;"><!-- Div Form -->
+			<div class="element-date" >
+				<label class="title">Date Inserted<span class="required">*</span></label>
+				<input class="datewidth" placeholder="yyyy-mm-dd" type="date" name="DateInsertedEdit"  id="DateInsertedEdit" value="" min="2010-01-01" required />
+			</div>
+			<div class="element-date" >
+				<label class="title">Date Due</label>
+				<input class="datewidth" placeholder="yyyy-mm-dd" type="date" name="DateDueEdit"  id="DateDueEdit" value="" min="2010-01-01" />
+			</div>
+			<div class="element-date" >
+				<label class="title">Date Done</label>
+				<input class="datewidth" placeholder="yyyy-mm-dd" type="date" name="DateDoneEdit"  id="DateDoneEdit" value="" min="2010-01-01" />
+			</div>
+			<div class="element-select" >
+				<label class="title">Resource (Responsible<span class="required">*</span>  + Helper)</label>
+				<div class="large"><span>
+					<select name="Resp1SelectEdit" id="Resp1SelectEdit" value="" required="required" >
+					</select>
+				</div>
+				<div class="large"><span>
+					<select name="Resp2SelectEdit" id="Resp2SelectEdit" value="" >
+					</select>
+				</div>
+			</div>
+			<div class="element-select" >
+				<label class="title">Category<span class="required">*</span></label>
+				<div class="large"><span>
+				<select name="CategorySelectEdit" id="CategorySelectEdit" value="" >
+				</select>
+				</div>
+			</div>
+			<div class="element-textarea" >
+				<label class="title">Description<span class="required">*</span></label>
+				<textarea class="large3lineText" name="DescEdit" id="DescEdit" cols="10" rows="4" ></textarea>
+			</div>
+			<div class="element-textarea" >
+				<label class="title">Follow up</label>
+				<textarea class="large3lineText" name="FollowupEdit" id="FollowupEdit" cols="10" rows="4" ></textarea>
+			</div>
+			<div class="element-select" >
+				<label class="title">Priority<span class="required">*</span></label>
+				<div class="large">
+				<select name="PrioSelectEdit" id="PrioSelectEdit" value="">
+					<option value="9">9 - To priorise</option>
+					<option value="1">1 - Low</option>
+					<option value="2">2 - Middle</option>
+					<option value="3">3 - High</option>
+				</select>
+				</div>
+				<div>
+					<label>Completed: <input type="checkbox" name="cbActiveEdit" id="cbActiveEdit" value="Done" checked="checked" /></label>
+				</div>
+			</div>
+		
+			<div class="rowDivButton">
+				<div class="cellDivButtonLeft">
+					<button type="button" onclick="updateTodo();" ><img src="images/check-white.png" alt=""/>Modify</button>
+				</div>
+			</div>
+			
+		</div>	<!-- div Form -->
+	</div>	<!-- div Header -->
+</div>	<!-- div Edit -->
+
+<!-- FILTER -->
+<div id="Filter" style="display:none">
+	<div id="divContainer">
+
+		<div class="containerDiv">
+			<div class="rowDivHeader">
+				<div class="cellDivHeaderLeft">
+					<button type="button" class="menuButton" onclick="return showHide('List','Filter');"><img src="images/home-white.png" alt=""/>Home</button>
+				</div>
+				<div class="cellDivHeaderRight">Todo<sup>App</sup><img src="images/TodoAppIcon20.png" alt="Icone Act App"/></div>
+			</div>
+		</div>
+
+		<div class="default-gray" style="background-color:#FFFFFF;font-size:12px;font-family:'Open Sans','Helvetica Neue','Helvetica',Arial,Verdana,sans-serif;color:#4D4D4D;"><!-- Div Form -->
+			<div class="element-date" >
+                <label class="title">Date Due between</label>
+                <input class="datewidth" placeholder="yyyy-mm-dd" type="date" name="Date1Filter"  id="Date1Filter" value="" min="2010-01-01" />
+                <input class="datewidth" placeholder="yyyy-mm-dd" type="date" name="Date2Filter"  id="Date2Filter" value="" min="2010-01-01" />
+			</div>
+			<div class="element-select" >
+				<label class="title">Resource (Responsible + Helper)</label>
+				<div class="large">
+					<select name="Resp1SelectFilter" id="Resp1SelectFilter" value="" >
+					</select>
+				</div>
+				<div class="large">
+					<select name="Resp2SelectFilter" id="Resp2SelectFilter" value="" >
+					</select>
+				</div>
+			</div>
+			<div class="element-select" >
+				<label class="title">Category</label>
+				<div class="large">
+				<select name="CategorySelectFilter" id="CategorySelectFilter" value="" >
+				</select>
+				</div>
+			</div>
+			<div class="element-textarea" >
+				<label class="title">Description</label>
+				<textarea class="large1lineText" name="DescFilter" id="DescFilter" cols="10" rows="4" ></textarea>
+			</div>
+			<div class="element-select" >
+				<label class="title">Priority<span class="required">*</span></label>
+				<div class="large">
+				<select name="PrioSelectFilter" id="PrioSelectFilter" value="">
+					<option value="">--All priorities--</option>
+					<option value="9">9 - To priorise</option>
+					<option value="1">1 - Low</option>
+					<option value="2">2 - Middle</option>
+					<option value="3">3 - High</option>
+				</select>
+				</div>
+			</div>
+			<div class="element-radiobutton" >
+			<!--	<fieldset data-role="controlgroup" data-type="horizontal"> --><!-- "vertical" -->
+			<!--		<legend>Radio ABC:</legend>	-->
+						<input type="radio" name="rbActiveFilter" id="rbActiveFilter0" value="0" checked="checked"/>
+						<label for="rbActiveFilter0">All</label>
+						<input type="radio" name="rbActiveFilter" id="rbActiveFilter1" value="1"  />
+						<label for="rbActiveFilter1">Actives</label>
+						<input type="radio" name="rbActiveFilter" id="rbActiveFilter2" value="2"  />
+						<label for="rbActiveFilter2">Completed</label>
+			<!--	</fieldset>	-->
+			</div>
+		
+			<div class="rowDivButton">
+				<div class="cellDivButtonLeft">
+					<button type="button" onclick="updateFilterParam();" ><img src="images/check-white.png" alt=""/>Filter</button>
+				</div>
+			</div>
+
+		</div>	<!-- div Form -->
+	</div>	<!-- div Header -->
+</div>	<!-- div Filter -->
+
+<!-- AUTH -->
+<div id="LoginParamEdit" style="display:none">
+	<div id="divContainer">
+
+		<div class="containerDiv">
+			<div class="rowDivHeader">
+				<div class="cellDivHeaderLeft">
+					<button type="button" class="menuButton" onclick="return showHide('List','LoginParamEdit'); "><img src="images/home-white.png" alt=""/>Home</button>
+				</div>
+				<div class="cellDivHeaderRight">Todo<sup>App</sup><img src="images/TodoAppIcon20.png" alt="Icone Todo App"/></div>
+			</div>
+		</div>
+
+		<div class="default-gray" style="background-color:#FFFFFF;font-size:12px;font-family:'Open Sans','Helvetica Neue','Helvetica',Arial,Verdana,sans-serif;color:#4D4D4D;"><!-- Div Form -->
+			<div style="align: center">
+				<img src="images/TodoApp.png" alt="Image Todo App"> 
+			</div>
+			<div class="element-input"  title="Input your user name" >
+				<label class="title">Username<span class="required">*</span></label>
+				<input class="medium" type="text" id="usernameEdit" name="usernameEdit" required="required" />
+			</div>
+			<div class="element-password" >
+				<label class="title">Password<span class="required">*</span></label>
+				<input class="medium" type="password" id="passwordEdit" name="passwordEdit" value="" required="required" />
+			</div>
+
+			<div class="rowDivButton">
+				<div class="cellDivButtonLeft">
+					<button type="button" onclick="updateLoginParam();" ><img src="images/recycle-white.png" alt=""/>Save and Sync</button>
+				</div>
+				<div class="cellDivButtonCenter">
+					<button type="button" onclick="dropTables();"><img src="images/alert-white.png" alt=""/>Drop tables</button>
+				</div>
+			</div>
+	
+		</div>	<!-- Div Form -->
+	</div> <!-- Div Header -->
+</div>	<!-- Div Auth -->
+
+</body>	
+
+<!-- FOOTER -->
+<div class="containerDiv">
+  <div class="rowDivFooter">
+	<div class="cellDivFooter">Todo<sup>App</sup> V1.0</div>
+	<div class="cellDivFooterRight">© 2016 <a href="http://AffairesUP.com/">AffairesUP.com</a></div>
+  </div>
+</div>
+
+</html>
