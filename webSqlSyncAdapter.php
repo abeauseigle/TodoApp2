@@ -56,10 +56,18 @@ $password = "______";
 	session_destroy(); 
 }
 
-function getServerData($clientLastSyncDate, $currentDateTime, $userUserID, $strUname, $userResourceID, $CLnum_rows, $BDBid){		//get the modified data from the server using an associative array
+function getServerData($clientLastSyncDate, $currentDateTime, $userUserID, $strUname, $userResourceID, $CLnum_rows, $BDBid){		
+//get the modified data from the server using an associative array
+/*field explanation in relation to the example:
+	$clientLastSyncDate: MANDATORY, sync operations are based on this
+	$userUserID: parameter example specific 
+	$strUname: parameter example specific 
+	$userRessourceID: parameter example specific 
+	$CLnum_rows: OPTIONAL, MANDATORY if LOGIN CHECK is required (=if authorisation is enabled)
+	$BDBid: MANDATORY, it pass the single client unique identifier
+*/
 
 	// Define here the tables to sync Server side param1 is the webSql table name and param2 is the MySQL table name
-//To try: Je crois que la colonne tableName_MySql est inutile
 	$tablesToSync = array(
 		array( "tableNameWebSql" => 'Todo',	    "getQueryFile" => 'getModifiedTodo.php'),
 		array( "tableNameWebSql" => 'Resource',	"getQueryFile" => 'getModifiedResource.php'),
