@@ -12,7 +12,7 @@ Installing
 - change the connexion data to your server (dbhost, dbname, dbuname, dbpass) in the php file in the connexion folder.
 - change mywebsite.com or mydomain.com to your server name.
 - index.html is the main file of the application. Start with it in your learning. It uses todoapp.js that is the controller of the app.
-- Click on the Auth button to authenticate to your user account. In the included DB, use the username abeauseigle with the password D3m0n.
+- Click on the Auth button to authenticate to your user account. In the included DB, use the username myusername with the password D3m0n.
 - In the first time, we sync to get (download) the data from the server MySQL database using webSqlSync.js. 
 - I modified the webSqlSync.js to treat the data from the server with a double id (tablename_ID for the server and id for the app). When the contact id is null in MySQL, it means that the record was created in MySQL first.
 - The todo table is two way synced.
