@@ -27,8 +27,10 @@ if ($CLnum_rows){
 	$sql_result = array();
 	mysql_query('SET CHARACTER SET utf8');	// It should remove the null returned in the JSON for TodoNote. Useful ???
 	$sql = mysql_query($query);
-	while($row = mysql_fetch_object($sql)){
-		$sql_result[] = $row;
+	if (mysql_num_rows($sql)>0) { //lp 20141024: to avoid error in case of empty table
+		while($row = mysql_fetch_object($sql)){
+			$sql_result[] = $row;
+		}
 	}
 	//echo "<br>", "Todo_QueryResult: ", date("Y-m-d H:i:s"), "<br>";
 	//print_r ($sql_result);
