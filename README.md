@@ -18,9 +18,27 @@ Installing
 - The todo table is two way synced.
 - The resource, category and user tables are one way sync (server to client). It's just to feed the options of the select box.
 
+Additional functions
+==========
+ DBSYNC.getLastSyncDate() : return the last client sync date (in unixtime)
+ DBSYNC.setSyncDate()  : it can be used to force a complete resync
+ DBSYNC.setFirstSync(unixtime) : it can be used to resync data changed since a certain date
+
 How it works
 ==========
 I use 2 indexes (one for the client DB and one for the server DB). 
+  	- On the table on Server the unique SERVER index MUST BE the first field, and the client one ("id") MUST BE the second field so you will have:  
+    * TodoID (int11),
+	* id (text),
+    * fieldA (whatever),
+    * fieldB (whatever),
+    * ...,
+	* TodoLastModifDateH (datetime, My php application already had this field to records changes, so you can use last_sync_date instead) 
+    * BDBid (char(13) ),
+    * last_sync_date (timestamp, on update CURRENT_TIMESTAMP, CURRENT_TIMESTAMP -OR- Datetime if you have already a timestamp column in your table)
+	*msgToApp (text, to send a feedback to the client side if )
+
+
 I modified webSqlSync.js to handle inserted records directly into MySQL that have a null client id value. I did a major changed in the code to be sure the sync is possible with many devices (many browsers in fact because a device may have many browsers). The first sync, the server sends a timestamp to create a BDBid (browser DataBase unique id). Here is the trick that was not easy to implement.
 I added or changed many functions to webSqlSync.js to determine if we INSERT or UPDATE the webSQL DB from the ServerJson.
 When I insert a record in webSQL (with the app.js code), I use -1 in the "server" ID to inform the server adapter that's a record newly created with the app. 
@@ -32,7 +50,7 @@ I hope it will help you to create your own webSql app. You are welcome to improv
 
 ## Limitations:
 
- - DELETE are not handled for now in the sync process.
+ - DELETE are not handled for now in the sync process. Handle it with a specific value in specific field like 'Active/inactive'.
  - There is a minimal error handling for the server side to the client via a msg field in the server answer Json. The app will open an alert to signify that the server was updated after the client last sync for a specific id. You're welcome to help me to improve it.
  - Still to do: Authentication encryption. Security improvement to avoid js injection. Gzip the JSON.
  - Your help will be appreciated.
